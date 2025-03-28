@@ -1,0 +1,76 @@
+[
+    {
+        "question": "Python language",
+        "code": [
+            "print(\"Hello World\")\n",
+            "Hello World\n"
+        ]
+    },
+    {
+        "question": "Add two numbers",
+        "code": [
+            "a = 15\nb = 12\n\n# Adding two numbers\nres = a + b\nprint(res)\n",
+            "27\n",
+            "# taking user input\na = input(\"First number: \")\nb = input(\"Second number: \")\n\n# converting input to float and adding\nres = float(a) + float(b)\n\nprint(res)\n",
+            "First number: 13.5Second number: 1.5415.04",
+            "# function to add two numbers\ndef add(a, b):\n    return a + b\n\n# initializing numbers\na = 10\nb = 5\n\n# calling function\nres = add(a,b)\n\nprint(res)\n",
+            "15\n",
+            "res = lambda a, b: a + b\nprint(res(10, 5))\n",
+            "15\n",
+            "import operator\nprint(operator.add(10, 5))\n",
+            "15\n",
+            "print(sum([10, 5]))\n",
+            "15\n",
+            "# Example:a = 5   # Integerb = 2.5 # Floating-point numberresult = a + bprint(result)  # Output: 7.5",
+            "# Example:a = 5   # 101 in binaryb = 3   # 011 in binaryresult = a | b  # Bitwise OR operationprint(result)   # Output: 7 (which is 111 in binary)",
+            "class Calculator:    def add(self, num1, num2):        return num1 + num2# Example usage:calc = Calculator()result = calc.add(10, 20)print(result)  # Output: 30",
+            "# Example:list1 = [1, 2, 3]list2 = [4, 5, 6]combined_list = list1 + list2print(combined_list)  # Output: [1, 2, 3, 4, 5, 6]",
+            "# Example:int_num = 10float_num = 2.5complex_num = 1 + 3jresult = int_num + float_numprint(result)  # Output: 12.5 (integer + float)result = float_num + complex_numprint(result)  # Output: (3.5+3j) (float + complex)"
+        ]
+    },
+    {
+        "question": "Factorial of a number",
+        "code": [
+            "# Input: An integer number\nnum = 6\n\n# Initialize the factorial variable to 1\nfactorial = 1\n\n# Calculate the factorial using a for loop\nfor i in range(1, num + 1):\n    factorial *= i\n\n# Output: The factorial of the number\nprint(f\"The factorial of {num} is {factorial}\")\n",
+            "The factorial of 6 is 720",
+            "# Python 3 program to find \n# factorial of given number\ndef factorial(n):\n    \n    # single line to find factorial\n    return 1 if (n==1 or n==0) else n * factorial(n - 1) \n\n# Driver Code\nnum = 5\nprint(\"Factorial of\",num,\"is\",factorial(num))\n",
+            "Factorial of 5 is 120",
+            "def factorial(n):\n\n    # single line to find factorial\n    return 1 if (n==1 or n==0) else n * factorial(n - 1) \n\n\n# Driver Code\nnum = 5\nprint (\"Factorial of\",num,\"is\",\n      factorial(num))\n",
+            "Factorial of 5 is 120",
+            "# Python 3 program to find\n# factorial of given number\nimport math\n\ndef factorial(n):\n    return(math.factorial(n))\n\n\n# Driver Code\nnum = 5\nprint(\"Factorial of\", num, \"is\",\n      factorial(num))\n\n# This code is contributed by Ashutosh Pandit\n",
+            "Factorial of 5 is 120",
+            "import numpy\nn=5\nx=numpy.prod([i for i in range(1,n+1)])\nprint(x)\n",
+            "120",
+            "# Function to find prime factors of a number\ndef primeFactors(n):\n    factors = {}\n    i = 2\n    while i*i <= n:\n        while n % i == 0:\n            if i not in factors:\n                factors[i] = 0\n            factors[i] += 1\n            n //= i\n        i += 1\n    if n > 1:\n        if n not in factors:\n            factors[n] = 0\n        factors[n] += 1\n    return factors\n\n# Function to find factorial of a number\ndef factorial(n):\n    result = 1\n    for i in range(2, n+1):\n        factors = primeFactors(i)\n        for p in factors:\n            result *= p ** factors[p]\n    return result\n\n# Driver Code\nnum = 5\nprint(\"Factorial of\", num, \"is\", factorial(num))\n",
+            "Factorial of 5 is 120"
+        ]
+    },
+    {
+        "question": "Find simple interest",
+        "code": [
+            "# function definition\ndef fun(p, t, r):\n    return (p * t * r) / 100\n\n# given values for principal (p), time (t) in years and rate of interest (r) per annum\np, t, r = 8, 6, 8\n\n# function calling \nres = fun(p, t, r)\n\nprint(res)\n",
+            "3.84\n",
+            "# lambda function\nsi = lambda p, t, r: (p * t * r) / 100\n\n# given values for principal (p), time (t) in years, and rate of interest (r) per annum\np, t, r = 8, 6, 8\n\nres = si(p, t, r)\nprint(res)\n",
+            "3.84\n",
+            "# given values for principal (p), time (t) in years, and rate of interest (r) per annum\np, t, r = 8, 6, 8\n\nsi = [p * t * r / 100][0]\nprint(si)\n",
+            "3.84\n"
+        ]
+    },
+    {
+        "question": "Find compound interest",
+        "code": [
+            "",
+            "",
+            "Compound interest is 6288.946267774416\n\n",
+            "",
+            "",
+            "Input:Enter the principal amount: 3000Enter rate of interest: 5Enter time in years: 3Output:Compound interest is 472.875",
+            "",
+            "",
+            "133.0992000000001\n\n",
+            "",
+            "",
+            "Compound interest is 133.0992000000001\n\n"
+        ]
+    }
+]
