@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Generation from Problem Statement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Code Generation from Problem Statement</h2>
+        <textarea id="problemStatement" rows="5" placeholder="Enter problem statement here..."></textarea>
+        <button onclick="generateCode()">Generate Code</button>
+        
+        <div class="output" id="generatedCode">
+            <!-- Generated code will appear here -->
+        </div>
+    </div>
+
+    <script>
+        async function generateCode() {
+            const problemStatement = document.getElementById("problemStatement").value;
+
+            if (!problemStatement) {
+                alert("Please enter a problem statement.");
+                return;
+            }
+
+            // Send the problem statement to the backend (e.g., Flask API)
+            try {
+                const response = await fetch("http://127.0.0.1:5000/generate-code", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ question: problemStatement }),
+                });
+
+                const data = await response.json();
+                const code = data.generated_code;
+                
+                document.getElementById("generatedCode").textContent = code || "Code could not be generated.";
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Failed to generate code.");
+            }
+        }
+    </script>
+</body>
+</html>
